@@ -13,12 +13,16 @@ export const CarList = () => {
 		carPromise.then(result => setCars(result))
 	}, [])
 
+	console.log(cars)
+
 	return (
-		<div>
+		<div style={{ width: 1170, margin: "30px auto" }}>
 			{!cars.length ? (
 				<div>Loading...</div>
 			) : (
-				cars.map(car => <div key={car.id}>{car.model.toUpperCase()}</div>)
+				cars.map(car => (
+					<div key={car.id}>{car.model.toUpperCase()}</div>
+				))
 			)}
 		</div>
 	)
