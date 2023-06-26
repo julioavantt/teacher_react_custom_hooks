@@ -1,19 +1,20 @@
 import dataList from "../../data/cars.json"
 import { toLower } from "../../helpers/toLower"
-import { useList } from "../../hooks/useList"
+import { useList2 } from "../../hooks/useList2"
+import { styles } from "../../styles"
+import { ContainerList } from "../ContaineList"
 
 const makers = ["BMW", "GMC", "Volvo"]
 
 const Container = ({ children }) => (
-	<div style={{ width: 1170, margin: "30px auto" }}>{children}</div>
+	<div style={styles.container}>{children}</div>
 )
 
 export const CarList = () => {
-	const { cars, selectValue, changeSelect } = useList(dataList)
+	const { cars, selectValue, changeSelect } = useList2(dataList)
 
 	return (
 		<Container>
-			<h1>Cars</h1>
 			<select value={selectValue} onChange={changeSelect}>
 				<option value="all">TODOS</option>
 				{makers.map(maker => (
@@ -21,13 +22,16 @@ export const CarList = () => {
 				))}
 			</select>
 			{!cars.length ? (
-				<div>Loading...</div>
+				<div id="loading">Loading...</div>
 			) : (
-				cars.map(car => (
-					<div key={car.id}>
-						{toLower(car.model)} - {car.maker}
-					</div>
-				))
+				<ContainerList>
+					<h2>FILTER</h2>
+					{cars.map(car => (
+						<div key={car.id}>
+							{toLower(car.model)} - {car.maker}
+						</div>
+					))}
+				</ContainerList>
 			)}
 		</Container>
 	)

@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react"
 
 import dataList from "../../data/cars.json"
+import { styles } from "../../styles"
+import { ContainerList } from "../ContaineList"
 import { toLower } from "../../helpers/toLower"
 
 export const CarList = () => {
@@ -16,11 +18,16 @@ export const CarList = () => {
 	}, [])
 
 	return (
-		<div>
+		<div style={styles.container}>
 			{!cars.length ? (
-				<div>Loading...</div>
+				<div id="loading">Loading...</div>
 			) : (
-				cars.map(car => <div key={car.id}>{toLower(car.model)}</div>)
+				<ContainerList>
+					<h2>HELPER</h2>
+					{cars.map(car => (
+						<div key={car.id}>{toLower(car.model)}</div>
+					))}
+				</ContainerList>
 			)}
 		</div>
 	)

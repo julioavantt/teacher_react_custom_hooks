@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react"
+
 import dataList from "../../data/cars.json"
+import { styles } from "../../styles"
+import { ContainerList } from "../ContaineList"
 
 const List = ({ children }) => {
 	const [cars, setCars] = useState([])
@@ -21,15 +24,18 @@ export const CarList = () => {
 		<List>
 			{cars => {
 				return (
-					<div>
+					<div style={styles.container}>
 						{!cars.length ? (
-							<div>Loading render props...</div>
+							<div id="loading">Loading render props...</div>
 						) : (
-							cars.map(car => (
-								<div key={car.id}>
-									{car.model.toUpperCase()}
-								</div>
-							))
+							<ContainerList>
+								<h2>RENDER PROPS</h2>
+								{cars.map(car => (
+									<div key={car.id}>
+										{car.model.toUpperCase()}
+									</div>
+								))}
+							</ContainerList>
 						)}
 					</div>
 				)
