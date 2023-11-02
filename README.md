@@ -28,12 +28,12 @@
 ## Ejercicio
 
 -  Crear una App con Vite.
--  Crear una funcionalidad en un custom hook:
-   &emsp;Un estado count.
-   &emsp;4 funciones:
-   &emsp;&emsp;addTen: Suma 10.
-   &emsp;&emsp;divideFive: Divide por 5.
-   &emsp;&emsp;reset: count es 0.
+-  Crear una funcionalidad en un custom hook:<br>
+   &emsp;Un estado count.<br>
+   &emsp;4 funciones:<br>
+   &emsp;&emsp;addTen: Suma 10.<br>
+   &emsp;&emsp;divideFive: Divide por 5.<br>
+   &emsp;&emsp;reset: count es 0.<br>
    &emsp;&emsp;destroy: El body es negro con un texto en el medio que dice "Me amo".
 -  El componente InnerApp debe utilizar la lógica del custom hook y mostrar el valor del count y los 4 botones.
    <br>
