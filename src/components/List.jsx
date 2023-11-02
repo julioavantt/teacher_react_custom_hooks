@@ -1,5 +1,5 @@
-import { toLower } from "../../helpers/toLower"
-import { ContainerList } from "../ContaineList"
+import { toLower } from "../helpers/toLower"
+import { ContainerList } from "./ContainerList"
 
 export const List = ({ cars }) => (
 	<ContainerList>

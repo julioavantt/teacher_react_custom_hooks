@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 
 import dataList from "../../data/cars.json"
 import { styles } from "../../styles"
-import { ContainerList } from "../ContaineList"
+import { ContainerList } from "../ContainerList"
 
 export const CarList = () => {
 	const [cars, setCars] = useState([])
