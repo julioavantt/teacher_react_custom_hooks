@@ -9,7 +9,7 @@ export const CarList = () => {
 
 	useEffect(() => {
 		const carPromise = new Promise(resolve =>
-			setTimeout(() => resolve(dataList), 10000)
+			setTimeout(() => resolve(dataList), 3000)
 		)
 		carPromise.then(result => setCars(result))
 	}, [])
@@ -23,7 +23,7 @@ export const CarList = () => {
 					<h2>COMPONENTE MONOLÍTICO</h2>
 					{cars.map(car => (
 						<div key={car.id}>
-							{car.model.toUpperCase() +
+							{car.maker.toUpperCase() +
 								" - " +
 								car.model.toUpperCase()}
 						</div>

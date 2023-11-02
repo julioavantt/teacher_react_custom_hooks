@@ -20,12 +20,12 @@ export const useList2 = dataList => {
 	const changeSelect = event => {
 		setSelectValue(event.target.value)
 		if (event.target.value === "all") {
-			setRenderCars(cars)
+			setRenderCars(cars) // 100
 		} else {
 			const newCarList = cars.filter(
 				cars => cars.maker === event.target.value
 			)
-			setRenderCars(newCarList)
+			setRenderCars(newCarList) // 5
 		}
 	}
 

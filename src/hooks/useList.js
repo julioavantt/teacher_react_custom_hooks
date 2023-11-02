@@ -4,15 +4,13 @@ export const useList = dataList => {
 	const [cars, setCars] = useState([])
 
 	useEffect(() => {
-		const carPromise = new Promise((resolve, reject) => {
-			setTimeout(() => {
-				resolve(dataList)
-			}, 2000)
-		})
-		carPromise.then(result => {
-			setCars(result)
-		})
+		const carPromise = new Promise(resolve =>
+			setTimeout(() => resolve(dataList), 1000)
+		)
+		carPromise.then(result => setCars(result))
 	}, [dataList])
 
-	return { cars }
+	const handleClick = () => alert(3)
+
+	return { cars, handleClick }
 }

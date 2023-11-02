@@ -1,3 +1,3 @@
 export const toLower = text => {
-	return text.toLowerCase()
+	return text.toLowerCase() + "!"
 }
