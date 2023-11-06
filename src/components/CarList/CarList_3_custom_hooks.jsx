@@ -1,16 +1,15 @@
 import { useList } from "../../hooks/useList"
-import dataList from "../../data/cars.json"
 import { Loading, List } from "../index"
 import { styles } from "../../styles"
 
 const makers = ["BMW", "GMC", "Volvo"]
 
 export const CarList = () => {
-	const { cars, selectValue, changeSelect } = useList(dataList)
+	const { renderCars, selectValue, changeSelect } = useList()
 
 	return (
 		<div style={styles.container}>
-			{!cars.length ? (
+			{!renderCars.length ? (
 				<Loading />
 			) : (
 				<>
@@ -20,7 +19,7 @@ export const CarList = () => {
 							<option value={maker}>{maker}</option>
 						))}
 					</select>
-					<List cars={cars} />
+					<List cars={renderCars} />
 				</>
 			)}
 		</div>

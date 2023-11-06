@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react"
 
-export const useList = dataList => {
+import dataList from "../data/cars.json"
+
+export const useList = _ => {
 	const [cars, setCars] = useState([])
 	const [renderCars, setRenderCars] = useState([])
 	const [selectValue, setSelectValue] = useState("")
@@ -22,6 +24,7 @@ export const useList = dataList => {
 		if (event.target.value === "all") {
 			setRenderCars(cars) // 100
 		} else {
+			console.log(cars, event.target.value)
 			const newCarList = cars.filter(
 				cars => cars.maker === event.target.value
 			)
@@ -29,5 +32,9 @@ export const useList = dataList => {
 		}
 	}
 
-	return { cars: renderCars, selectValue, changeSelect }
+	return {
+		renderCars,
+		selectValue,
+		changeSelect,
+	}
 }
